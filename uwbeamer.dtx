@@ -38,7 +38,7 @@
 
 \begin{document}
   \RecordChanges
-  \DocInput{fibeamer.dtx}
+  \DocInput{uwbeamer.dtx}
   \PrintIndex
   \RaggedRight
   \PrintChanges
@@ -49,25 +49,25 @@
 %<*class>
 \NeedsTeXFormat{LaTeX2e}
 %
-% Define `\fibeamer@version` and store it in the `VERSION.tex` file \fi
-{\def\fibeamer@versiondef#1#2{
-  \gdef\fibeamer@version@number{#1}
-  \gdef\fibeamer@version@date{#2}
-  \gdef\fibeamer@version{#2 #1 fibeamer MU beamer theme}}
-\fibeamer@versiondef{v1.1.6-dev}{2016/09/27}}
-% {\newwrite\f\openout\f=VERSION\write\f{\fibeamer@version}\closeout\f}
+% Define `\uwbeamer@version` and store it in the `VERSION.tex` file \fi
+{\def\uwbeamer@versiondef#1#2{
+  \gdef\uwbeamer@version@number{#1}
+  \gdef\uwbeamer@version@date{#2}
+  \gdef\uwbeamer@version{#2 #1 uwbeamer MU beamer theme}}
+\uwbeamer@versiondef{v1.1.6-dev}{2016/09/27}}
+% {\newwrite\f\openout\f=VERSION\write\f{\uwbeamer@version}\closeout\f}
 %
 % \changes{v1.1.5:1} {2016/05/18}{Added \texttt{pdfencoding} to the
 %   \textsf{hyperref} package setup. This fixes the problem with garbled
 %   characters in PDF metadata with Lua\TeX.}
-% \iffalse Use `\fibeamer@version` as the PDF creator key.
+% \iffalse Use `\uwbeamer@version` as the PDF creator key.
 \hypersetup{%
-  pdfcreator=\fibeamer@version,
+  pdfcreator=\uwbeamer@version,
   pdfencoding=auto}
 % \fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % \changes{v1.1.3}   {2016/02/24}{Added visual tests of output
 %   PDFs.}
 % \changes{v1.1.1:3} {2016/01/14}{Refactored the themes of the
@@ -102,7 +102,7 @@
 %
 % \begin{abstract}
 % \noindent This document details the design and the implementation
-% of the \textsf{fibeamer} theme for the \textsf{beamer} document
+% of the \textsf{uwbeamer} theme for the \textsf{beamer} document
 % class. Included are technical information for anyone who wishes
 % to extend the theme with their own beamer themes as well as
 % information for ordinary users.
@@ -111,23 +111,23 @@
 % \tableofcontents
 %
 % \section{Basic usage}
-% In order to use the \textsf{fibeamer} theme, insert
-% |\usetheme|\oarg{options}|{fibeamer}| into the preamble of a
+% In order to use the \textsf{uwbeamer} theme, insert
+% |\usetheme|\oarg{options}|{uwbeamer}| into the preamble of a
 % \LaTeX\ document that uses the \textsf{beamer} document class.
 % Refer to Section \ref{sec:options} for the list of available
 % \textit{options}.
-% 
+%
 % \section{Package options}\label{sec:options}
 % \subsection{The \texttt{fonts} option}
-% \begin{macro}{\iffibeamer@fonts}
+% \begin{macro}{\ifuwbeamer@fonts}
 % The |fonts| option instructs the package to set up the
 % combination of the font families of Carlito, Arev, Iwona, Dsfont,
 % and DejaVu for the typesetting of text and mathematics. This
 % option is enabled by default.
 %    \begin{macrocode}
-\ProvidesPackage{fibeamer/beamerthemefibeamer}[\fibeamer@version]
-\newif\iffibeamer@fonts
-\DeclareOptionBeamer{fonts}{\fibeamer@fontstrue}
+\ProvidesPackage{uwbeamer/beamerthemeuwbeamer}[\uwbeamer@version]
+\newif\ifuwbeamer@fonts
+\DeclareOptionBeamer{fonts}{\uwbeamer@fontstrue}
 \ExecuteOptionsBeamer{fonts}
 %    \end{macrocode}
 % \end{macro}
@@ -135,19 +135,19 @@
 % The |nofonts| option instructs the package not to alter the
 % currently set text and mathematics font families.
 %    \begin{macrocode}
-\DeclareOptionBeamer{nofonts}{\fibeamer@fontsfalse}
+\DeclareOptionBeamer{nofonts}{\uwbeamer@fontsfalse}
 %    \end{macrocode}
 % \subsection{The \texttt{microtype} option}
 % \changes{v1.0.2}{2015/11/18}{Added the opt-out \texttt{microtype
 %   option}. [VN]}
-% \begin{macro}{\iffibeamer@microtype}
+% \begin{macro}{\ifuwbeamer@microtype}
 % The |microtype| option instructs the package to use the
 % microtypographic extensions of modern \TeX\ engines, such as
 % \hologo{pdfTeX}, \Hologo{LuaTeX}, and (with only partial support)
 % \Hologo{XeLaTeX}. This option is enabled by default.
 %    \begin{macrocode}
-\newif\iffibeamer@microtype
-\DeclareOptionBeamer{microtype}{\fibeamer@microtypetrue}
+\newif\ifuwbeamer@microtype
+\DeclareOptionBeamer{microtype}{\uwbeamer@microtypetrue}
 \ExecuteOptionsBeamer{microtype}
 %    \end{macrocode}
 % \end{macro}
@@ -156,22 +156,22 @@
 % extensions. This may be necessary, if an older \TeX\ engine,
 % such as \hologo{TeX} or \hologo{eTeX}, is being used.
 %    \begin{macrocode}
-\DeclareOptionBeamer{nomicrotype}{\fibeamer@microtypefalse}
+\DeclareOptionBeamer{nomicrotype}{\uwbeamer@microtypefalse}
 %    \end{macrocode}
-% \begin{macro}{\fibeamer@university}
+% \begin{macro}{\uwbeamer@university}
 % \subsection{The \texttt{university} option}
 % The \marg{\texttt{university}=identifier} option pair sets the
 % identifier of the university, at which the presentation is being
 % written, to \textit{identifier}. The \textit{identifier} is
-% stored within the |\fibeamer@university| macro, whose
+% stored within the |\uwbeamer@university| macro, whose
 % implicit value is \texttt{mu}. This value corresponds to the
 % Masaryk University in Brno.
 %    \begin{macrocode}
-\DeclareOptionBeamer{university}{\def\fibeamer@university{#1}}
+\DeclareOptionBeamer{university}{\def\uwbeamer@university{#1}}
 \ExecuteOptionsBeamer{university=mu}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@faculty}
+% \begin{macro}{\uwbeamer@faculty}
 % \subsection{The \texttt{faculty} option}
 % The \marg{\texttt{faculty}=identifier} pair sets the faculty, at
 % which the thesis is being written, to \textit{domain}. The
@@ -189,80 +189,80 @@
 %   The Faculty of Arts & \texttt{phil} \\
 %   The Faculty of Sports Studies & \texttt{fsps} \\\bottomrule
 % \end{tabularx}\end{center}
-% The \textit{identifier} is stored within the |\fibeamer@faculty|
+% The \textit{identifier} is stored within the |\uwbeamer@faculty|
 % macro, whose implicit value is \texttt{fi}.
 %    \begin{macrocode}
-\DeclareOptionBeamer{faculty}{\def\fibeamer@faculty{#1}}
+\DeclareOptionBeamer{faculty}{\def\uwbeamer@faculty{#1}}
 \ExecuteOptionsBeamer{faculty=fi}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@locale}
+% \begin{macro}{\uwbeamer@locale}
 % \subsection{The \texttt{locale} option}
 % \changes{v1.1.0:1}{2015/11/24}{Added the \texttt{locale} option
-%   and the \cs{fibeamer@locale} macro. [VN]}
+%   and the \cs{uwbeamer@locale} macro. [VN]}
 % The \marg{\texttt{locale}=name} pair sets the name of the main
 % locale to \textit{name}. The \textit{name} is stored within the
-% |\fibeamer@locale| macro, whose implicit value is the main
+% |\uwbeamer@locale| macro, whose implicit value is the main
 % language of either the \textsf{babel} or the \textsf{polyglossia}
 % package, or \texttt{english}, when undefined.
 %
 % With regards to the themes of the Masaryk University in Brno, the
-% |\fibeamer@locale| macro is not used; it only provides the
-% default value to the |\fibeamer@logoLocale| macro.
+% |\uwbeamer@locale| macro is not used; it only provides the
+% default value to the |\uwbeamer@logoLocale| macro.
 %    \begin{macrocode}
-\def\fibeamer@locale{%
+\def\uwbeamer@locale{%
   % Babel / polyglossia detection
   \ifx\languagename\undefined%
   english\else\languagename\fi}
 \DeclareOptionBeamer{locale}{%
-  \def\fibeamer@locale{#1}}
+  \def\uwbeamer@locale{#1}}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@logoLocale}
+% \begin{macro}{\uwbeamer@logoLocale}
 % \subsection{The \texttt{logoLocale} option}
 % The \marg{\texttt{logoLocale}=name} pair sets the logo file
 % locale to \textit{name}. The \textit{name} is stored within the
-% |\fibeamer@logoLocale| macro, whose implicit value is
-% |\fibeamer@locale|.
+% |\uwbeamer@logoLocale| macro, whose implicit value is
+% |\uwbeamer@locale|.
 % \changes{v1.1.0:2}{2016/01/11}{Added the \texttt{logoLocale}
-%   option and the \cs{fibeamer@logoLocale} macro. [VN]}
+%   option and the \cs{uwbeamer@logoLocale} macro. [VN]}
 % \begin{macrocode}
-\def\fibeamer@logoLocale{\fibeamer@locale}
+\def\uwbeamer@logoLocale{\uwbeamer@locale}
 \DeclareOptionBeamer{logoLocale}{%
-  \def\fibeamer@logoLocale{#1}}
+  \def\uwbeamer@logoLocale{#1}}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@basePath}
+% \begin{macro}{\uwbeamer@basePath}
 % \subsection{The \texttt{basePath} option}
 % The \marg{\texttt{basePath}=path} pair sets the \textit{path}
 % containing the package files. The \textit{path} is prepended to
-% every other path (|\fibeamer@logopath| and |\fibeamer@themePath|)
+% every other path (|\uwbeamer@logopath| and |\uwbeamer@themePath|)
 % used by the package. If non-empty, the
 % \textit{path} gets normalized to \textit{path/}. The normalized
-% \textit{path} is stored within the |\fibeamer@basePath| macro,
-% whose implicit value is |fibeamer/|.
+% \textit{path} is stored within the |\uwbeamer@basePath| macro,
+% whose implicit value is |uwbeamer/|.
 %    \begin{macrocode}
 \DeclareOptionBeamer{basePath}{%
-  \ifx\fibeamer@empty#1\fibeamer@empty%
-    \def\fibeamer@basePath{}%
+  \ifx\uwbeamer@empty#1\uwbeamer@empty%
+    \def\uwbeamer@basePath{}%
   \else%
-    \def\fibeamer@basePath{#1/}%
+    \def\uwbeamer@basePath{#1/}%
   \fi}
-\ExecuteOptionsBeamer{basePath=fibeamer}
+\ExecuteOptionsBeamer{basePath=uwbeamer}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@subdir}
-% The |\fibeamer@subdir| macro returns |/| unchanged, coerces
+% \begin{macro}{\uwbeamer@subdir}
+% The |\uwbeamer@subdir| macro returns |/| unchanged, coerces
 % |.|, |..|, |/|\textit{path}, |./|\textit{path} and
 % |../|\textit{path} to |./|, |../|, |/|\textit{path}|/|,
 % |./|\textit{path}|/| and |../|\textit{path}|/|, respectively, and
-% prefixes any other \textit{path} with |\fibeamer@basePath|. This
+% prefixes any other \textit{path} with |\uwbeamer@basePath|. This
 % macro is used within the definition of the \texttt{themePath} and
 % \texttt{logoPath} options.
 %    \begin{macrocode}
-\def\fibeamer@subdir#1#2#3#4\empty{%
+\def\uwbeamer@subdir#1#2#3#4\empty{%
   \ifx#1\empty%           <empty> -> <basePath>
-    \fibeamer@basePath
+    \uwbeamer@basePath
   \else
     \if#1/%
       \ifx#2\empty%             / -> /
@@ -282,184 +282,184 @@
               \if#3/%   ../<path> -> ../<path>/
                 ../#4/%
               \else
-                \fibeamer@basePath#1#2#3#4/%
+                \uwbeamer@basePath#1#2#3#4/%
               \fi
             \fi
           \else
             \if#2/%      ./<path> -> ./<path>/
               ./#3#4/%
             \else
-              \fibeamer@basePath#1#2#3#4/%
+              \uwbeamer@basePath#1#2#3#4/%
             \fi
           \fi
         \fi
       \else
-        \fibeamer@basePath#1#2#3#4/%
+        \uwbeamer@basePath#1#2#3#4/%
       \fi
     \fi
   \fi}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@themePath}
+% \begin{macro}{\uwbeamer@themePath}
 % \subsection{The \texttt{themePath} option}
 % The \marg{\texttt{themePath}=path} pair sets the \textit{path}
 % containing the theme files. The \textit{path} is normalized using
-% the |\fibeamer@subdir| macro and stored within the
-% |\fibeamer@stylePath| macro, whose implicit value is
-% |\fibeamer@basePath theme/|. By default, this expands to
-% \texttt{fibeamer/theme/}.
+% the |\uwbeamer@subdir| macro and stored within the
+% |\uwbeamer@stylePath| macro, whose implicit value is
+% |\uwbeamer@basePath theme/|. By default, this expands to
+% \texttt{uwbeamer/theme/}.
 %    \begin{macrocode}
 \DeclareOptionBeamer{themePath}{%
-  \def\fibeamer@themePath{\fibeamer@subdir#1%
+  \def\uwbeamer@themePath{\uwbeamer@subdir#1%
     \empty\empty\empty\empty}}
 \ExecuteOptionsBeamer{themePath=theme}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@logoPath}
+% \begin{macro}{\uwbeamer@logoPath}
 % \subsection{The \texttt{logoPath} option}
 % The \marg{\texttt{logoPath}=path} pair sets the \textit{path}
 % containing the logo files, which is used by the outer themes to
 % load the main logo. The \textit{path} is normalized using the
-% |\fibeamer@subdir| macro and stored within the
-% |\fibeamer@logoPath| macro, whose implicit value is
-% |\fibeamer@basePath| followed by |logo/\fibeamer@university|. By
-% default, this expands to \texttt{fibeamer/logo/mu/}.
+% |\uwbeamer@subdir| macro and stored within the
+% |\uwbeamer@logoPath| macro, whose implicit value is
+% |\uwbeamer@basePath| followed by |logo/\uwbeamer@university|. By
+% default, this expands to \texttt{uwbeamer/logo/mu/}.
 %    \begin{macrocode}
 \DeclareOptionBeamer{logoPath}{%
-  \def\fibeamer@logoPath{\fibeamer@subdir#1%
+  \def\uwbeamer@logoPath{\uwbeamer@subdir#1%
     \empty\empty\empty\empty}}
-\ExecuteOptionsBeamer{logoPath=logo/\fibeamer@university}
+\ExecuteOptionsBeamer{logoPath=logo/\uwbeamer@university}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@logo}
+% \begin{macro}{\uwbeamer@logo}
 % \subsection{The \texttt{logo} option}
 % The \marg{\texttt{logo}=filename} pair sets the prefix of the
 % filename of the main logo to \textit{filename}. The
-% \textit{filename} is stored within the |\fibeamer@logo| macro,
+% \textit{filename} is stored within the |\uwbeamer@logo| macro,
 % whose implicit value is
 % \changes{v1.1.0:1}{2015/11/24}{Changed the implicit value of the
-%   \cs{fibeamer@logo} macro. [VN]}
-% |\fibeamer@logoPath| followed by
-% \texttt{fibeamer-}|\fibeamer@university|\texttt{^^A
-% \discretionary{-}{-}{-}}|\fibeamer@faculty|\texttt{-}^^A
-% |\fibeamer@logoLocale|. By default, this expands to
-% \texttt{fibeamer\discretionary{/}{/}{/}logo/fibeamer-mu-fi^^A
+%   \cs{uwbeamer@logo} macro. [VN]}
+% |\uwbeamer@logoPath| followed by
+% \texttt{uwbeamer-}|\uwbeamer@university|\texttt{^^A
+% \discretionary{-}{-}{-}}|\uwbeamer@faculty|\texttt{-}^^A
+% |\uwbeamer@logoLocale|. By default, this expands to
+% \texttt{uwbeamer\discretionary{/}{/}{/}logo/uwbeamer-mu-fi^^A
 % -english}.
 %    \begin{macrocode}
-\DeclareOptionBeamer{logo}{\def\fibeamer@logo{#1}}
+\DeclareOptionBeamer{logo}{\def\uwbeamer@logo{#1}}
 \ExecuteOptionsBeamer{%
-  logo=\fibeamer@logoPath fibeamer-\fibeamer@university-%
-    \fibeamer@faculty-\fibeamer@logoLocale}
+  logo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
+    \uwbeamer@faculty-\uwbeamer@logoLocale}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@fallbackLogo}
+% \begin{macro}{\uwbeamer@fallbackLogo}
 % \subsection{The \texttt{fallbackLogo} option}
-% \changes{v1.1.0:3}{2016/01/11}{Added the \cs{fibeamer@fallbackLogo}
+% \changes{v1.1.0:3}{2016/01/11}{Added the \cs{uwbeamer@fallbackLogo}
 %   macro. [VN]}
 % \changes{v1.1.1:1}{2016/01/14}{Added the \texttt{fallbackLogo}
 %   option. [VN]}
-% The |\fibeamer@fallbackLogo| macro contains the filename of the
-% logo file to be used, if |\fibeamer@logo| does not exist. The
-% implicit value of the |\fibeamer@fall|\discretionary{-}{}{}^^A
-% |backLogo| macro is |\fibeamer@logoPath| followed by
-% \texttt{fibeamer-}|\fibeamer@uni|\texttt{\discretionary{-}{}{}}^^A
-% |versity\fibeamer@faculty|\texttt{-english}. By default, this
-% expands to \texttt{fibeamer/logo\discretionary{/}{/}{/}fi\-bea^^A
+% The |\uwbeamer@fallbackLogo| macro contains the filename of the
+% logo file to be used, if |\uwbeamer@logo| does not exist. The
+% implicit value of the |\uwbeamer@fall|\discretionary{-}{}{}^^A
+% |backLogo| macro is |\uwbeamer@logoPath| followed by
+% \texttt{uwbeamer-}|\uwbeamer@uni|\texttt{\discretionary{-}{}{}}^^A
+% |versity\uwbeamer@faculty|\texttt{-english}. By default, this
+% expands to \texttt{uwbeamer/logo\discretionary{/}{/}{/}fi\-bea^^A
 % mer-mu-fi-english}.
 %    \begin{macrocode}
-\DeclareOptionBeamer{fallbackLogo}{\def\fibeamer@fallbackLogo{#1}}
+\DeclareOptionBeamer{fallbackLogo}{\def\uwbeamer@fallbackLogo{#1}}
 \ExecuteOptionsBeamer{%
-  fallbackLogo=\fibeamer@logoPath fibeamer-\fibeamer@university-%
-    \fibeamer@faculty-english}
+  fallbackLogo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
+    \uwbeamer@faculty-english}
 %    \end{macrocode}
 % \end{macro}
 % \section{Logic}
 % \subsection{Macros}
-% \begin{macro}{\fibeamer@require}
-% The |\fibeamer@require|\marg{package} macro is used to gracefully
+% \begin{macro}{\uwbeamer@require}
+% The |\uwbeamer@require|\marg{package} macro is used to gracefully
 % load a \textit{package}. Packages that have already been loaded
 % or do not exist are ignored by the macro.
 %    \begin{macrocode}
-\def\fibeamer@require#1{\IfFileExists{#1.sty}{%
+\def\uwbeamer@require#1{\IfFileExists{#1.sty}{%
   \@ifpackageloaded{#1}{}{\RequirePackage{#1}}}{}}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@requireTheme}
-% The |\fibeamer@requireTheme|\marg{class} macro is used to load a
+% \begin{macro}{\uwbeamer@requireTheme}
+% The |\uwbeamer@requireTheme|\marg{class} macro is used to load a
 % \textit{class} of beamer themes. The following packages are
 % loaded, provided they exist:
 % \begin{itemize}
-%  \item\texttt{beamer}\textit{class}\texttt{themefibeamer} from
-%    the |\fibeamer@themePath| directory -- The base theme file. By
-%    default, this expands to \texttt{fibeamer/theme/beamer}^^A
-%    \textit{class}\texttt{themefibeamer}.
-%  \item\texttt{beamer}\textit{class}\texttt{themefibeamer-}^^A
-%    |\fibeamer@university| from the |\fibeamer@themePath|^^A
-%    \discretionary{}{}{}|\fibeamer@university/| directory -- The
+%  \item\texttt{beamer}\textit{class}\texttt{themeuwbeamer} from
+%    the |\uwbeamer@themePath| directory -- The base theme file. By
+%    default, this expands to \texttt{uwbeamer/theme/beamer}^^A
+%    \textit{class}\texttt{themeuwbeamer}.
+%  \item\texttt{beamer}\textit{class}\texttt{themeuwbeamer-}^^A
+%    |\uwbeamer@university| from the |\uwbeamer@themePath|^^A
+%    \discretionary{}{}{}|\uwbeamer@university/| directory -- The
 %    university theme file. By default, this expands to
-%    \texttt{fibeamer/theme/mu/beamer}\textit{class}^^A
-%    \texttt{themefibeamer-mu}.
-%  \item\texttt{beamer}\textit{class}\texttt{themefibeamer-}^^A
-%    |\fibeamer@university|\texttt{-}|\fibeamer@faculty| from the
-%    |\fibeamer@themePath\fibeamer@university/| directory -- The
+%    \texttt{uwbeamer/theme/mu/beamer}\textit{class}^^A
+%    \texttt{themeuwbeamer-mu}.
+%  \item\texttt{beamer}\textit{class}\texttt{themeuwbeamer-}^^A
+%    |\uwbeamer@university|\texttt{-}|\uwbeamer@faculty| from the
+%    |\uwbeamer@themePath\uwbeamer@university/| directory -- The
 %    faculty theme file. By default, this expands to \texttt{^^A
-%    fibeamer/theme/mu/beamer}\textit{class}\texttt{themefibeam^^A
+%    uwbeamer/theme/mu/beamer}\textit{class}\texttt{themefibeam^^A
 %    er-mu-fi}.
 % \end{itemize}
 %    \begin{macrocode}
-\def\fibeamer@requireTheme#1{%
-  \fibeamer@require{\fibeamer@themePath beamer#1themefibeamer}
-  \fibeamer@require{\fibeamer@themePath\fibeamer@university%
-    /beamer#1themefibeamer-\fibeamer@university}
-  \fibeamer@require{\fibeamer@themePath\fibeamer@university%
-    /beamer#1themefibeamer-\fibeamer@university-\fibeamer@faculty}}
+\def\uwbeamer@requireTheme#1{%
+  \uwbeamer@require{\uwbeamer@themePath beamer#1themeuwbeamer}
+  \uwbeamer@require{\uwbeamer@themePath\uwbeamer@university%
+    /beamer#1themeuwbeamer-\uwbeamer@university}
+  \uwbeamer@require{\uwbeamer@themePath\uwbeamer@university%
+    /beamer#1themeuwbeamer-\uwbeamer@university-\uwbeamer@faculty}}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@includeLogo}
+% \begin{macro}{\uwbeamer@includeLogo}
 % \changes{v1.1.0:5}{2016/01/11}{Added the
-%   \cs{fibeamer@includeLogo} macro. [VN]}
-% The |\fibeamer@includeLogo|\oarg{options} macro includes the
+%   \cs{uwbeamer@includeLogo} macro. [VN]}
+% The |\uwbeamer@includeLogo|\oarg{options} macro includes the
 % main logo into the document. If specified, the \textit{options}
 % are passed to the |\includegraphics| macro.  The
-% |\fibeamer@includeLogo| macro requires the \textsf{etoolbox}
+% |\uwbeamer@includeLogo| macro requires the \textsf{etoolbox}
 % package to function.
 %    \begin{macrocode}
-\fibeamer@require{etoolbox}
-\newcommand\fibeamer@includeLogo[1][]{{
+\uwbeamer@require{etoolbox}
+\newcommand\uwbeamer@includeLogo[1][]{{
   % See <http://tex.stackexchange.com/a/39987/70941>.
   \patchcmd{\Gin@ii}% Make `\includegraphics` use `@fallbackLogo`.
     {\begingroup}% <search>
     {\begingroup\renewcommand{\@latex@error}[2]{%
-       \includegraphics[#1]\fibeamer@fallbackLogo}}% <replace>
+       \includegraphics[#1]\uwbeamer@fallbackLogo}}% <replace>
     {}% <success>
     {}% <failure>
-  \includegraphics[#1]\fibeamer@logo}}
+  \includegraphics[#1]\uwbeamer@logo}}
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\fibeamer@patch}
-% \changes{v1.1.2}{2016/02/19}{Added \cs{fibeamer@patch}.}
-% The |\fibeamer@patch|\oarg{versions}\oarg{patch} macro expands
-% \textit{patch}, if |\fibeamer|\texttt{\discretionary{@}{@}{@}}^^A
+% \begin{macro}{\uwbeamer@patch}
+% \changes{v1.1.2}{2016/02/19}{Added \cs{uwbeamer@patch}.}
+% The |\uwbeamer@patch|\oarg{versions}\oarg{patch} macro expands
+% \textit{patch}, if |\uwbeamer|\texttt{\discretionary{@}{@}{@}}^^A
 % |version@number| (defined at the top of the file
-% \texttt{beamerthemefibeamer.sty}) matches any of the
+% \texttt{beamerthemeuwbeamer.sty}) matches any of the
 % comma-delimited \textit{versions}. This macro enables the simple
 % deployment of version-targeted patches.
 %    \begin{macrocode}
-\def\fibeamer@patch#1#2{%
-  \def\fibeamer@patch@versions{#1}%
-  \def\fibeamer@patch@action{#2}%
-  \def\fibeamer@patch@next##1,{%
-    \def\fibeamer@patch@arg{##1}%
-    \def\fibeamer@patch@relax{\relax}%
-    \ifx\fibeamer@patch@arg\fibeamer@version@number
-      \def\fibeamer@patch@next####1\relax,{}%
-      \expandafter\fibeamer@patch@action
-      \expandafter\fibeamer@patch@next
-    \else\ifx\fibeamer@patch@arg\fibeamer@patch@relax\else
-      \expandafter\expandafter\expandafter\fibeamer@patch@next
+\def\uwbeamer@patch#1#2{%
+  \def\uwbeamer@patch@versions{#1}%
+  \def\uwbeamer@patch@action{#2}%
+  \def\uwbeamer@patch@next##1,{%
+    \def\uwbeamer@patch@arg{##1}%
+    \def\uwbeamer@patch@relax{\relax}%
+    \ifx\uwbeamer@patch@arg\uwbeamer@version@number
+      \def\uwbeamer@patch@next####1\relax,{}%
+      \expandafter\uwbeamer@patch@action
+      \expandafter\uwbeamer@patch@next
+    \else\ifx\uwbeamer@patch@arg\uwbeamer@patch@relax\else
+      \expandafter\expandafter\expandafter\uwbeamer@patch@next
     \fi\fi}%
-  \expandafter\expandafter\expandafter\fibeamer@patch@next
-  \expandafter\fibeamer@patch@versions\expandafter,\relax,}
+  \expandafter\expandafter\expandafter\uwbeamer@patch@next
+  \expandafter\uwbeamer@patch@versions\expandafter,\relax,}
 %    \end{macrocode}
 % \end{macro}
 % \subsection{Main routine}
@@ -471,7 +471,7 @@
 % package gets loaded.
 %    \begin{macrocode}
   % Set up the microtypographic extensions
-  \iffibeamer@microtype
+  \ifuwbeamer@microtype
     \RequirePackage{microtype}
   \fi
 %    \end{macrocode}
@@ -508,7 +508,7 @@
 %    \begin{macrocode}
 \mode<presentation>
   % Set up the fonts
-  \iffibeamer@fonts
+  \ifuwbeamer@fonts
     \RequirePackage{ifthen}
     \RequirePackage{ifxetex}
     \RequirePackage{ifluatex}
@@ -550,10 +550,10 @@
 % Finally, the color, font, inner and outer themes of the
 % respective university and faculty will be loaded.
 %    \begin{macrocode}
-\fibeamer@requireTheme{color}
-\fibeamer@requireTheme{font}
-\fibeamer@requireTheme{inner}
-\fibeamer@requireTheme{outer}
+\uwbeamer@requireTheme{color}
+\uwbeamer@requireTheme{font}
+\uwbeamer@requireTheme{inner}
+\uwbeamer@requireTheme{outer}
 %    \end{macrocode}
 %
 % \section{Themes}

@@ -1,63 +1,63 @@
-SUBMAKES_REQUIRED=logo/mu theme/mu
-SUBMAKES_EXTRA=guide/mu example/mu
-SUBMAKES_TEST=test/mu
+SUBMAKES_REQUIRED=logo/uw theme/uw
+SUBMAKES_EXTRA=guide/uw example/uw
+SUBMAKES_TEST=test/uw
 SUBMAKES=$(SUBMAKES_REQUIRED) $(SUBMAKES_EXTRA) $(SUBMAKES_TEST)
 .PHONY: all base complete docs clean dist dist-implode implode \
 	install install-base install-docs uninstall tests $(SUBMAKES)
 
-BASETHEMEFILE=beamerthemefibeamer.sty
-OTHERTHEMEFILES=theme/mu/*.sty
+BASETHEMEFILE=beamerthemeuwbeamer.sty
+OTHERTHEMEFILES=theme/uw/*.sty
 THEMEFILES=$(BASETHEMEFILE) $(OTHERTHEMEFILES)
-LOGOSOURCES=logo/*/*.pdf
-LOGOS=logo/*/*.eps
-DTXFILES=*.dtx theme/mu/*.dtx
-INSFILES=*.ins theme/mu/*.ins
-TESTS=test/mu/*.pdf
-MAKES=guide/mu/Makefile theme/mu/Makefile logo/mu/Makefile Makefile \
-	test/mu/Makefile
-USEREXAMPLE_SOURCES=example/mu/Makefile example/mu/example.dtx \
-	example/mu/*.ins
-USEREXAMPLES=example/mu/econ-lualatex.pdf \
-	example/mu/econ-pdflatex.pdf example/mu/fi-lualatex.pdf \
-	example/mu/fi-pdflatex.pdf example/mu/fsps-lualatex.pdf \
-	example/mu/fsps-pdflatex.pdf example/mu/fss-lualatex.pdf \
-	example/mu/fss-pdflatex.pdf example/mu/law-lualatex.pdf \
-	example/mu/law-pdflatex.pdf example/mu/med-lualatex.pdf \
-	example/mu/med-pdflatex.pdf example/mu/ped-lualatex.pdf \
-	example/mu/ped-pdflatex.pdf example/mu/phil-lualatex.pdf \
-	example/mu/phil-pdflatex.pdf example/mu/sci-lualatex.pdf \
-	example/mu/sci-pdflatex.pdf
+LOGOSOURCES=logo/uw/*.pdf
+LOGOS=logo/uw/*.eps
+DTXFILES=*.dtx theme/uw/*.dtx
+INSFILES=*.ins theme/uw/*.ins
+TESTS=test/uw/*.pdf
+MAKES=guide/uw/Makefile theme/uw/Makefile logo/uw/Makefile Makefile \
+	test/uw/Makefile
+USEREXAMPLE_SOURCES=example/uw/Makefile example/uw/example.dtx \
+	example/uw/*.ins
+USEREXAMPLES=example/uw/econ-lualatex.pdf \
+	example/uw/econ-pdflatex.pdf example/uw/fi-lualatex.pdf \
+	example/uw/fi-pdflatex.pdf example/uw/fsps-lualatex.pdf \
+	example/uw/fsps-pdflatex.pdf example/uw/fss-lualatex.pdf \
+	example/uw/fss-pdflatex.pdf example/uw/law-lualatex.pdf \
+	example/uw/law-pdflatex.pdf example/uw/med-lualatex.pdf \
+	example/uw/med-pdflatex.pdf example/uw/ped-lualatex.pdf \
+	example/uw/ped-pdflatex.pdf example/uw/phil-lualatex.pdf \
+	example/uw/phil-pdflatex.pdf example/uw/sci-lualatex.pdf \
+	example/uw/sci-pdflatex.pdf
 DEVEXAMPLES=logo/DESCRIPTION logo/EXAMPLE/DESCRIPTION \
-	logo/mu/DESCRIPTION theme/EXAMPLE/DESCRIPTION \
-	theme/mu/DESCRIPTION theme/DESCRIPTION example/DESCRIPTION \
-	example/EXAMPLE/DESCRIPTION example/mu/DESCRIPTION \
-	example/mu/resources/DESCRIPTION guide/DESCRIPTION \
-	guide/EXAMPLE/DESCRIPTION guide/mu/DESCRIPTION \
-	guide/mu/resources/DESCRIPTION test/DESCRIPTION \
-	test/EXAMPLE/DESCRIPTION test/mu/DESCRIPTION
+	logo/uw/DESCRIPTION theme/EXAMPLE/DESCRIPTION \
+	theme/uw/DESCRIPTION theme/DESCRIPTION example/DESCRIPTION \
+	example/EXAMPLE/DESCRIPTION example/uw/DESCRIPTION \
+	example/uw/resources/DESCRIPTION guide/DESCRIPTION \
+	guide/EXAMPLE/DESCRIPTION guide/uw/DESCRIPTION \
+	guide/uw/resources/DESCRIPTION test/DESCRIPTION \
+	test/EXAMPLE/DESCRIPTION test/uw/DESCRIPTION
 EXAMPLES=$(USEREXAMPLES) $(DEVEXAMPLES)
-MISCELLANEOUS=guide/mu/guide.bib \
-	guide/mu/guide.dtx guide/mu/*.ins guide/mu/resources/cog.pdf \
-  guide/mu/resources/vader.pdf guide/mu/resources/yoda.pdf \
+MISCELLANEOUS=guide/uw/guide.bib \
+	guide/uw/guide.dtx guide/uw/*.ins guide/uw/resources/cog.pdf \
+  guide/uw/resources/vader.pdf guide/uw/resources/yoda.pdf \
 	$(USEREXAMPLES:.pdf=.tex) \
-	example/mu/resources/jabberwocky-dark.pdf \
-	example/mu/resources/jabberwocky-light.pdf README.md
+	example/uw/resources/jabberwocky-dark.pdf \
+	example/uw/resources/jabberwocky-light.pdf README.md
 RESOURCES=$(THEMEFILES) $(LOGOS) $(LOGOSOURCES)
 SOURCES=$(DTXFILES) $(INSFILES) LICENSE.tex
-AUXFILES=fibeamer.aux fibeamer.log fibeamer.toc fibeamer.ind \
-	fibeamer.idx fibeamer.out fibeamer.ilg fibeamer.gls \
-	fibeamer.glo fibeamer.hd
-MANUAL=fibeamer.pdf
-PDFSOURCES=fibeamer.dtx
-GUIDES=guide/mu/econ.pdf guide/mu/fi.pdf guide/mu/fsps.pdf \
-	guide/mu/fss.pdf guide/mu/law.pdf guide/mu/med.pdf \
-	guide/mu/ped.pdf guide/mu/phil.pdf guide/mu/sci.pdf
+AUXFILES=uwbeamer.aux uwbeamer.log uwbeamer.toc uwbeamer.ind \
+	uwbeamer.idx uwbeamer.out uwbeamer.ilg uwbeamer.gls \
+	uwbeamer.glo uwbeamer.hd
+MANUAL=uwbeamer.pdf
+PDFSOURCES=uwbeamer.dtx
+GUIDES=guide/uw/econ.pdf guide/uw/fi.pdf guide/uw/fsps.pdf \
+	guide/uw/fss.pdf guide/uw/law.pdf guide/uw/med.pdf \
+	guide/uw/ped.pdf guide/uw/phil.pdf guide/uw/sci.pdf
 PDFS=$(MANUAL) $(GUIDES) $(USEREXAMPLES)
 DOCS=$(MANUAL) $(GUIDES)
 VERSION=VERSION.tex
-TDSARCHIVE=fibeamer.tds.zip
-CTANARCHIVE=fibeamer.ctan.zip
-DISTARCHIVE=fibeamer.zip
+TDSARCHIVE=uwbeamer.tds.zip
+CTANARCHIVE=uwbeamer.ctan.zip
+DISTARCHIVE=uwbeamer.zip
 ARCHIVES=$(TDSARCHIVE) $(CTANARCHIVE) $(DISTARCHIVE)
 MAKEABLES=$(MANUAL) $(BASETHEMEFILE) $(ARCHIVES) $(VERSION)
 
@@ -93,7 +93,7 @@ dist: dist-implode complete
 	make $(TDSARCHIVE) $(DISTARCHIVE) $(CTANARCHIVE)
 
 # This target creates the theme files.
-$(BASETHEMEFILE): fibeamer.ins fibeamer.dtx
+$(BASETHEMEFILE): uwbeamer.ins uwbeamer.dtx
 	xetex $<
 
 # This target typesets the guides and user examples.
@@ -129,11 +129,11 @@ $(DISTARCHIVE): $(SOURCES) $(RESOURCES) $(MAKES) $(TESTS) \
 # This target generates a CTAN distribution file.
 $(CTANARCHIVE): $(SOURCES) $(MAKES) $(TESTS) $(EXAMPLES) \
 	$(MISCELLANEOUS) $(DOCS) $(VERSION) $(LOGOSOURCES)
-	DIR=`mktemp -d` && mkdir -p "$$DIR/fibeamer" && \
+	DIR=`mktemp -d` && mkdir -p "$$DIR/uwbeamer" && \
 	cp --verbose $(TDSARCHIVE) "$$DIR" && \
-	cp --parents --verbose $^ "$$DIR/fibeamer" && \
+	cp --parents --verbose $^ "$$DIR/uwbeamer" && \
 	printf '.PHONY: implode\nimplode:\n' > \
-		"$$DIR/fibeamer/example/mu/Makefile" && \
+		"$$DIR/uwbeamer/example/uw/Makefile" && \
 	(cd "$$DIR" && zip -r -v -nw $@ *) && \
 	mv "$$DIR"/$@ . && rm -rf "$$DIR"
 
@@ -154,15 +154,15 @@ install-base:
 		printf "Detected TeXLive directory: %s\n" $(TEXLIVEDIR); \
 		exit 1; \
 	fi
-	
+
 	@# Theme and logo files
-	mkdir -p "$(to)/tex/latex/fibeamer"
-	cp --parents --verbose $(RESOURCES) "$(to)/tex/latex/fibeamer"
-	
+	mkdir -p "$(to)/tex/latex/uwbeamer"
+	cp --parents --verbose $(RESOURCES) "$(to)/tex/latex/uwbeamer"
+
 	@# Source files
-	mkdir -p "$(to)/source/latex/fibeamer"
-	cp --parents --verbose $(SOURCES) "$(to)/source/latex/fibeamer"
-	
+	mkdir -p "$(to)/source/latex/uwbeamer"
+	cp --parents --verbose $(SOURCES) "$(to)/source/latex/uwbeamer"
+
 	@# Rebuild the hash
 	[ "$(nohash)" = "true" ] || texhash
 
@@ -176,11 +176,11 @@ install-docs:
 		printf "Detected TeXLive directory: %s\n" $(TEXLIVEDIR); \
 		exit 1; \
 	fi
-	
+
 	@# Documentation
-	mkdir -p "$(to)/doc/latex/fibeamer"
-	cp --parents --verbose $(DOCS) "$(to)/doc/latex/fibeamer"
-	
+	mkdir -p "$(to)/doc/latex/uwbeamer"
+	cp --parents --verbose $(DOCS) "$(to)/doc/latex/uwbeamer"
+
 	@# Rebuild the hash
 	[ "$(nohash)" = "true" ] || texhash
 
@@ -195,16 +195,16 @@ uninstall:
 		printf "Detected TeXLive directory: %s\n" $(TEXLIVEDIR); \
 		exit 1; \
 	fi
-	
+
 	@# Theme and logo files
-	rm -rf "$(from)/tex/latex/fibeamer"
-	
+	rm -rf "$(from)/tex/latex/uwbeamer"
+
 	@# Source files
-	rm -rf "$(from)/source/latex/fibeamer"
-	
+	rm -rf "$(from)/source/latex/uwbeamer"
+
 	@# Documentation
-	rm -rf "$(from)/doc/latex/fibeamer"
-	
+	rm -rf "$(from)/doc/latex/uwbeamer"
+
 	@# Rebuild the hash
 	[ "$(nohash)" = "true" ] || texhash
 
