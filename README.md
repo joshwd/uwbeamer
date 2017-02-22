@@ -1,5 +1,7 @@
 # About #
 
+`UWbeamer` is an unoffocial beamer theme for the University of Wisconsin-Madison. It is based on the `Fibeamer' theme:
+
 `Fibeamer` is a beamer theme for the typesetting of thesis defense
 presentations at the Masaryk University (Brno, Czech Republic). The
 theme has been designed for easy extensibility by style and locale
