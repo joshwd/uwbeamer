@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  22 FEB 2017 10:35
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  22 FEB 2017 11:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -69,14 +69,14 @@ Processing file uwbeamer.dtx (class) -> beamerthemeuwbeamer.sty
 % % % . . . . % % % % % % % % % % % % . . . . % % % % % % % % % % % % % % % %
 % . . . . % % % % % % % % % % % % % % % % % . . . . % % % % % % % % % . . % %
 % % % % % % % % % % % % % % % % % % % % % % % . . . . . . % % % % % % % % % %
-% . . . . . . . . . . % % % % % % % % % % % . . . . . . . . . . . . . . . % %
-% % % . % % % % . . . . % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . % % % % . . . . % % % % % % % % % % % % % % % % % % % % % > %
-Lines  processed: 579
-Comments removed: 357
+% . . % . . % % % % % . % % % % % % % % % % % . . . . . . . . . . . . . . . %
+% % % % . % % % % . . . . % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . % % % % . . . . % % % % % % % % % % % % % % % % % % % % % > %
+Lines  processed: 580
+Comments removed: 363
 Comments  passed: 2
-Codelines passed: 216
+Codelines passed: 211
 
  )
 No pages of output.

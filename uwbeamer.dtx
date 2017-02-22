@@ -125,7 +125,7 @@
 % and DejaVu for the typesetting of text and mathematics. This
 % option is enabled by default.
 %    \begin{macrocode}
-\ProvidesPackage{uwbeamer/beamerthemeuwbeamer}[\uwbeamer@version]
+\ProvidesPackage{beamerthemeuwbeamer}[\uwbeamer@version]
 \newif\ifuwbeamer@fonts
 \DeclareOptionBeamer{fonts}{\uwbeamer@fontstrue}
 \ExecuteOptionsBeamer{fonts}
@@ -348,7 +348,7 @@
 %    \begin{macrocode}
 \DeclareOptionBeamer{logo}{\def\uwbeamer@logo{#1}}
 \ExecuteOptionsBeamer{%
-  logo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
+  logo=\uwbeamer@logoPath \uwbeamer@university-%
     \uwbeamer@faculty}
 %    \end{macrocode}
 % \end{macro}
@@ -425,15 +425,16 @@
 % package to function.
 %    \begin{macrocode}
 \uwbeamer@require{etoolbox}
-\newcommand\uwbeamer@includeLogo[1][]{{
+\newcommand\uwbeamer@includeLogo[1][]{
+%{
   % See <http://tex.stackexchange.com/a/39987/70941>.
-  \patchcmd{\Gin@ii}% Make `\includegraphics` use `@fallbackLogo`.
-    {\begingroup}% <search>
-    {\begingroup\renewcommand{\@latex@error}[2]{%
-       \includegraphics[#1]\uwbeamer@fallbackLogo}}% <replace>
-    {}% <success>
-    {}% <failure>
-  \includegraphics[#1]\uwbeamer@logo}}
+ % \patchcmd{\Gin@ii}% Make `\includegraphics` use `@fallbackLogo`.
+%    {\begingroup}% <search>
+%    {\begingroup\renewcommand{\@latex@error}[2]{%
+%       \includegraphics[#1]\uwbeamer@fallbackLogo}}% <replace>
+%    {}% <success>
+%    {}% <failure>
+  \includegraphics[#1]\uwbeamer@logo} %}
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\uwbeamer@patch}

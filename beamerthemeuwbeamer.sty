@@ -61,7 +61,7 @@
   pdfencoding=auto}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ProvidesPackage{uwbeamer/beamerthemeuwbeamer}[\uwbeamer@version]
+\ProvidesPackage{beamerthemeuwbeamer}[\uwbeamer@version]
 \newif\ifuwbeamer@fonts
 \DeclareOptionBeamer{fonts}{\uwbeamer@fontstrue}
 \ExecuteOptionsBeamer{fonts}
@@ -138,7 +138,7 @@
 \ExecuteOptionsBeamer{logoPath=logo/\uwbeamer@university}
 \DeclareOptionBeamer{logo}{\def\uwbeamer@logo{#1}}
 \ExecuteOptionsBeamer{%
-  logo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
+  logo=\uwbeamer@logoPath \uwbeamer@university-%
     \uwbeamer@faculty}
 \DeclareOptionBeamer{fallbackLogo}{\def\uwbeamer@fallbackLogo{#1}}
 \ExecuteOptionsBeamer{%
@@ -153,15 +153,10 @@
   \uwbeamer@require{\uwbeamer@themePath\uwbeamer@university%
     /beamer#1themeuwbeamer-\uwbeamer@university-\uwbeamer@faculty}}
 \uwbeamer@require{etoolbox}
-\newcommand\uwbeamer@includeLogo[1][]{{
+\newcommand\uwbeamer@includeLogo[1][]{
   % See <http://tex.stackexchange.com/a/39987/70941>.
-  \patchcmd{\Gin@ii}% Make `\includegraphics` use `@fallbackLogo`.
-    {\begingroup}% <search>
-    {\begingroup\renewcommand{\@latex@error}[2]{%
-       \includegraphics[#1]\uwbeamer@fallbackLogo}}% <replace>
-    {}% <success>
-    {}% <failure>
-  \includegraphics[#1]\uwbeamer@logo}}
+ % \patchcmd{\Gin@ii}% Make `\includegraphics` use `@fallbackLogo`.
+  \includegraphics[#1]\uwbeamer@logo} %}
 \def\uwbeamer@patch#1#2{%
   \def\uwbeamer@patch@versions{#1}%
   \def\uwbeamer@patch@action{#2}%
