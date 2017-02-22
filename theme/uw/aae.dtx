@@ -17,7 +17,9 @@
   \definecolor{uwbeamer@black}{HTML}{2B2E34}
   \definecolor{uwbeamer@white}{HTML}{FFFFFF}
   \definecolor{uwbeamer@gray}{HTML}{646569}
-  \colorlet{uwbeamer@lightBrown}{uwbeamer@gray!30!uwbeamer@white}
+  \definecolor{uwbeamer@bodytext}{HTML}{494949}
+  \definecolor{uwbeamer@redtext}{HTML}{C5050C}
+  %\colorlet{uwbeamer@lightBrown}{uwbeamer@gray!30!uwbeamer@white}
   \colorlet{uwbeamer@darkBrown}{uwbeamer@gray!60!uwbeamer@black}
   \definecolor{uwbeamer@gray}{HTML}{999999}
   \definecolor{uwbeamer@lightOrange}{HTML}{FFA25E}
@@ -39,8 +41,8 @@
     \begingroup
       \uwbeamer@darktrue
       %% Structures
-      \setbeamercolor*{frametitle}{fg=uwbeamer@gray!30!uwbeamer@white}
-      \setbeamercolor*{framesubtitle}{fg=uwbeamer@white}
+      \setbeamercolor*{frametitle}{fg=uwbeamer@redtext}
+      \setbeamercolor*{framesubtitle}{fg=uwbeamer@redtext}
       %% Text
       \setbeamercolor*{normal text}{fg=uwbeamer@white, bg=uwbeamer@gray}
       \setbeamercolor*{structure}{fg=uwbeamer@white, bg=uwbeamer@gray}
@@ -81,10 +83,10 @@
 % Outside the |darkframes| environment, the light theme is used.
 %    \begin{macrocode}
   %% Structures
-  \setbeamercolor{frametitle}{fg=uwbeamer@gray}
+  \setbeamercolor{frametitle}{fg=uwbeamer@redtext}
   \setbeamercolor{framesubtitle}{fg=uwbeamer@black!75!uwbeamer@white}
   %% Text
-  \setbeamercolor{normal text}{fg=uwbeamer@black, bg=uwbeamer@white}
+  \setbeamercolor{normal text}{fg=uwbeamer@bodytext, bg=uwbeamer@white}
   \setbeamercolor{structure}{fg=uwbeamer@black, bg=uwbeamer@white}
 %    \end{macrocode}
 % \changes{v1.1.0:7}{2016/01/12}{Added support for \cs{alert} to
