@@ -12,12 +12,12 @@ LOGOSOURCES=logo/uw/*.pdf
 LOGOS=logo/uw/*.eps
 DTXFILES=*.dtx theme/uw/*.dtx
 INSFILES=*.ins theme/uw/*.ins
-TESTS=test/uw/*.pdf
-MAKES=guide/uw/Makefile theme/uw/Makefile logo/uw/Makefile Makefile \
-	test/uw/Makefile
-USEREXAMPLE_SOURCES=example/uw/Makefile example/uw/example.dtx \
+#TESTS=test/uw/*.pdf
+MAKES=guide/uw/Makefile theme/uw/Makefile logo/uw/Makefile Makefile
+	#test/uw/Makefile
+#USEREXAMPLE_SOURCES=example/uw/Makefile example/uw/example.dtx \
 	example/uw/*.ins
-USEREXAMPLES=example/uw/econ-lualatex.pdf \
+#USEREXAMPLES=example/uw/econ-lualatex.pdf \
 	example/uw/econ-pdflatex.pdf example/uw/fi-lualatex.pdf \
 	example/uw/fi-pdflatex.pdf example/uw/fsps-lualatex.pdf \
 	example/uw/fsps-pdflatex.pdf example/uw/fss-lualatex.pdf \
@@ -27,7 +27,7 @@ USEREXAMPLES=example/uw/econ-lualatex.pdf \
 	example/uw/ped-pdflatex.pdf example/uw/phil-lualatex.pdf \
 	example/uw/phil-pdflatex.pdf example/uw/sci-lualatex.pdf \
 	example/uw/sci-pdflatex.pdf
-DEVEXAMPLES=logo/DESCRIPTION logo/EXAMPLE/DESCRIPTION \
+#DEVEXAMPLES=logo/DESCRIPTION logo/EXAMPLE/DESCRIPTION \
 	logo/uw/DESCRIPTION theme/EXAMPLE/DESCRIPTION \
 	theme/uw/DESCRIPTION theme/DESCRIPTION example/DESCRIPTION \
 	example/EXAMPLE/DESCRIPTION example/uw/DESCRIPTION \
@@ -35,8 +35,8 @@ DEVEXAMPLES=logo/DESCRIPTION logo/EXAMPLE/DESCRIPTION \
 	guide/EXAMPLE/DESCRIPTION guide/uw/DESCRIPTION \
 	guide/uw/resources/DESCRIPTION test/DESCRIPTION \
 	test/EXAMPLE/DESCRIPTION test/uw/DESCRIPTION
-EXAMPLES=$(USEREXAMPLES) $(DEVEXAMPLES)
-MISCELLANEOUS=guide/uw/guide.bib \
+#EXAMPLES=$(USEREXAMPLES) $(DEVEXAMPLES)
+#MISCELLANEOUS=guide/uw/guide.bib \
 	guide/uw/guide.dtx guide/uw/*.ins guide/uw/resources/cog.pdf \
   guide/uw/resources/vader.pdf guide/uw/resources/yoda.pdf \
 	$(USEREXAMPLES:.pdf=.tex) \

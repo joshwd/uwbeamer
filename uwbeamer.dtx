@@ -53,7 +53,7 @@
 {\def\uwbeamer@versiondef#1#2{
   \gdef\uwbeamer@version@number{#1}
   \gdef\uwbeamer@version@date{#2}
-  \gdef\uwbeamer@version{#2 #1 uwbeamer MU beamer theme}}
+  \gdef\uwbeamer@version{#2 #1 uwbeamer UW beamer theme}}
 \uwbeamer@versiondef{v1.1.6-dev}{2016/09/27}}
 % {\newwrite\f\openout\f=VERSION\write\f{\uwbeamer@version}\closeout\f}
 %
@@ -168,7 +168,7 @@
 % Masaryk University in Brno.
 %    \begin{macrocode}
 \DeclareOptionBeamer{university}{\def\uwbeamer@university{#1}}
-\ExecuteOptionsBeamer{university=mu}
+\ExecuteOptionsBeamer{university=uw}
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\uwbeamer@faculty}
@@ -193,7 +193,7 @@
 % macro, whose implicit value is \texttt{fi}.
 %    \begin{macrocode}
 \DeclareOptionBeamer{faculty}{\def\uwbeamer@faculty{#1}}
-\ExecuteOptionsBeamer{faculty=fi}
+\ExecuteOptionsBeamer{faculty=aae}
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\uwbeamer@locale}
@@ -323,7 +323,7 @@
 % |\uwbeamer@subdir| macro and stored within the
 % |\uwbeamer@logoPath| macro, whose implicit value is
 % |\uwbeamer@basePath| followed by |logo/\uwbeamer@university|. By
-% default, this expands to \texttt{uwbeamer/logo/mu/}.
+% default, this expands to \texttt{uwbeamer/logo/uw/}.
 %    \begin{macrocode}
 \DeclareOptionBeamer{logoPath}{%
   \def\uwbeamer@logoPath{\uwbeamer@subdir#1%
@@ -349,7 +349,7 @@
 \DeclareOptionBeamer{logo}{\def\uwbeamer@logo{#1}}
 \ExecuteOptionsBeamer{%
   logo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
-    \uwbeamer@faculty-\uwbeamer@logoLocale}
+    \uwbeamer@faculty}
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\uwbeamer@fallbackLogo}
@@ -370,7 +370,7 @@
 \DeclareOptionBeamer{fallbackLogo}{\def\uwbeamer@fallbackLogo{#1}}
 \ExecuteOptionsBeamer{%
   fallbackLogo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
-    \uwbeamer@faculty-english}
+    \uwbeamer@faculty}
 %    \end{macrocode}
 % \end{macro}
 % \section{Logic}
@@ -397,13 +397,13 @@
 %    |\uwbeamer@university| from the |\uwbeamer@themePath|^^A
 %    \discretionary{}{}{}|\uwbeamer@university/| directory -- The
 %    university theme file. By default, this expands to
-%    \texttt{uwbeamer/theme/mu/beamer}\textit{class}^^A
+%    \texttt{uwbeamer/theme/uw/beamer}\textit{class}^^A
 %    \texttt{themeuwbeamer-mu}.
 %  \item\texttt{beamer}\textit{class}\texttt{themeuwbeamer-}^^A
 %    |\uwbeamer@university|\texttt{-}|\uwbeamer@faculty| from the
 %    |\uwbeamer@themePath\uwbeamer@university/| directory -- The
 %    faculty theme file. By default, this expands to \texttt{^^A
-%    uwbeamer/theme/mu/beamer}\textit{class}\texttt{themefibeam^^A
+%    uwbeamer/theme/uw/beamer}\textit{class}\texttt{themefibeam^^A
 %    er-mu-fi}.
 % \end{itemize}
 %    \begin{macrocode}
@@ -571,25 +571,9 @@
 % \def\file#1{\subsubsection{The \texttt{#1} file}}
 %
 % \subsection{Base files}
-% \input{theme/mu/base.dtx}
-% \subsection{The Faculty of Informatics}
-% \input{theme/mu/fi.dtx}
-% \subsection{The Faculty of Science}
-% \input{theme/mu/sci.dtx}
-% \subsection{The Faculty of Arts}
-% \input{theme/mu/phil.dtx}
-% \subsection{The Faculty of Education}
-% \input{theme/mu/ped.dtx}
-% \subsection{The Faculty of Social Studies}
-% \input{theme/mu/fss.dtx}
-% \subsection{The Faculty of Law}
-% \input{theme/mu/law.dtx}
-% \subsection{The Faculty of Economics and Administration}
-% \input{theme/mu/econ.dtx}
-% \subsection{The Faculty of Medicine}
-% \input{theme/mu/med.dtx}
-% \subsection{The Faculty of Sports Studies}
-% \input{theme/mu/fsps.dtx}
+% \input{theme/uw/base.dtx}
+% \subsection{Agricultural and Applied Economics}
+% \input{theme/uw/aae.dtx}
 % \iffalse
 %</class>
 % \fi

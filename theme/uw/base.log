@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  21 FEB 2017 16:34
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  22 FEB 2017 10:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -53,21 +53,21 @@ English documentation    <2014/09/29>
 
 ))
 
-Generating file(s) beamercolorthemeuwbeamer-mu.sty beamerfontthemeuwbeamer-mu.s
-ty beamerinnerthemeuwbeamer-mu.sty beamerouterthemeuwbeamer-mu.sty 
-\openout0 = `beamercolorthemeuwbeamer-mu.sty'.
+Generating file(s) beamercolorthemeuwbeamer-uw.sty beamerfontthemeuwbeamer-uw.s
+ty beamerinnerthemeuwbeamer-uw.sty beamerouterthemeuwbeamer-uw.sty 
+\openout0 = `beamercolorthemeuwbeamer-uw.sty'.
 
-\openout1 = `beamerfontthemeuwbeamer-mu.sty'.
+\openout1 = `beamerfontthemeuwbeamer-uw.sty'.
 
-\openout2 = `beamerinnerthemeuwbeamer-mu.sty'.
+\openout2 = `beamerinnerthemeuwbeamer-uw.sty'.
 
-\openout3 = `beamerouterthemeuwbeamer-mu.sty'.
+\openout3 = `beamerouterthemeuwbeamer-uw.sty'.
 
 
-Processing file base.dtx (color) -> beamercolorthemeuwbeamer-mu.sty
-                         (font) -> beamerfontthemeuwbeamer-mu.sty
-                         (inner) -> beamerinnerthemeuwbeamer-mu.sty
-                         (outer) -> beamerouterthemeuwbeamer-mu.sty
+Processing file base.dtx (color) -> beamercolorthemeuwbeamer-uw.sty
+                         (font) -> beamerfontthemeuwbeamer-uw.sty
+                         (inner) -> beamerinnerthemeuwbeamer-uw.sty
+                         (outer) -> beamerouterthemeuwbeamer-uw.sty
 % <*color % % % % . . . % % % % % % % . % % % % % . % % % % % % % % % % % % %
 . . . % % % % % % % % . % % % % % % % % % % % % % % . . . . . . . . . . . . .
 . . . . . . . % % % % % % . . . . % % % % % . . . % % > <*font % % % % % . . .

@@ -1,10 +1,10 @@
 %%
-%% This is file `beamercolorthemefibeamer-mu-med.sty',
+%% This is file `beamercolorthemeuwbeamer-uw-aae.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% med.dtx 
+%% aae.dtx 
 %% 
 %% Copyright 2016  Vít Novotný <witiko@mail.muni.cz>
 %% Faculty of Informatics, Masaryk University (Brno, Czech Republic)
@@ -51,87 +51,86 @@
 %% The names of the source files used are shown above.
 %% 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{fibeamer/theme/mu/%
-  beamercolorthemefibeamer-mu-med}[2016/05/06]
+\ProvidesPackage{uwbeamer/theme/uw/%
+  beamercolorthemeuwbeamer-uw-aae}[2016/05/06]
 \mode<presentation>
-  \definecolor{fibeamer@black}{HTML}{000000}
-  \definecolor{fibeamer@white}{HTML}{FFFFFF}
-  \definecolor{fibeamer@red}{HTML}{c82600}
-  \colorlet{fibeamer@lightRed}{fibeamer@red!30!fibeamer@white}
-  \colorlet{fibeamer@darkRed}{fibeamer@red!60!fibeamer@black}
-  \definecolor{fibeamer@gray}{HTML}{999999}
-  \definecolor{fibeamer@lightOrange}{HTML}{FFA25E}
-  \colorlet{fibeamer@orange}{fibeamer@lightOrange!80!fibeamer@darkRed}
+  \definecolor{uwbeamer@black}{HTML}{2B2E34}
+  \definecolor{uwbeamer@white}{HTML}{FFFFFF}
+  \definecolor{uwbeamer@brown}{HTML}{892840}
+  \colorlet{uwbeamer@lightBrown}{uwbeamer@brown!30!uwbeamer@white}
+  \colorlet{uwbeamer@darkBrown}{uwbeamer@brown!60!uwbeamer@black}
+  \definecolor{uwbeamer@gray}{HTML}{999999}fi
+  \definecolor{uwbeamer@lightOrange}{HTML}{FFA25E}
+  \colorlet{uwbeamer@orange}{uwbeamer@lightOrange!80!uwbeamer@darkBrown}
   %% Background gradients
-  \colorlet{fibeamer@dark@backgroundInner}{fibeamer@darkRed}
-  \colorlet{fibeamer@dark@backgroundOuter}{fibeamer@darkRed}
-  \colorlet{fibeamer@light@backgroundInner}{fibeamer@white}
-  \colorlet{fibeamer@light@backgroundOuter}{fibeamer@white}
+  \colorlet{uwbeamer@dark@backgroundInner}{uwbeamer@darkBrown}
+  \colorlet{uwbeamer@dark@backgroundOuter}{uwbeamer@darkBrown}
+  \colorlet{uwbeamer@light@backgroundInner}{uwbeamer@white}
+  \colorlet{uwbeamer@light@backgroundOuter}{uwbeamer@white}
   \renewenvironment{darkframes}{%
     \begingroup
-      \fibeamer@darktrue
+      \uwbeamer@darktrue
       %% Structures
-      \setbeamercolor*{frametitle}{fg=fibeamer@lightRed}
-      \setbeamercolor*{framesubtitle}{fg=fibeamer@white}
+      \setbeamercolor*{frametitle}{fg=uwbeamer@brown!30!uwbeamer@white}
+      \setbeamercolor*{framesubtitle}{fg=uwbeamer@white}
       %% Text
-      \setbeamercolor*{normal text}{fg=fibeamer@white, bg=fibeamer@red}
-      \setbeamercolor*{structure}{fg=fibeamer@white, bg=fibeamer@red}
-      \setbeamercolor*{alerted text}{fg=fibeamer@lightOrange}
+      \setbeamercolor*{normal text}{fg=uwbeamer@white, bg=uwbeamer@brown}
+      \setbeamercolor*{structure}{fg=uwbeamer@white, bg=uwbeamer@brown}
+      \setbeamercolor*{alerted text}{fg=uwbeamer@lightOrange}
       %% Items, footnotes and links
-      \setbeamercolor*{item}{fg=fibeamer@lightRed}
-      \setbeamercolor*{footnote mark}{fg=fibeamer@lightRed}
-      \hypersetup{urlcolor=fibeamer@lightRed}
+      \setbeamercolor*{item}{fg=uwbeamer@lightBrown}
+      \setbeamercolor*{footnote mark}{fg=uwbeamer@lightBrown}
+      \hypersetup{urlcolor=uwbeamer@lightBrown}
       %% Blocks
       \setbeamercolor*{block title}{%
-        fg=fibeamer@white, bg=fibeamer@red!60!fibeamer@white}
+        fg=uwbeamer@white, bg=uwbeamer@brown!60!uwbeamer@white}
       \setbeamercolor*{block title example}{%
-        fg=fibeamer@white, bg=fibeamer@red!60!fibeamer@white}
+        fg=uwbeamer@white, bg=uwbeamer@brown!60!uwbeamer@white}
       \setbeamercolor*{block title alerted}{%
-        fg=fibeamer@darkRed, bg=fibeamer@lightOrange}
+        fg=uwbeamer@darkBrown, bg=uwbeamer@lightOrange}
       \setbeamercolor*{block body}{%
-        fg=fibeamer@red,
-        bg=fibeamer@gray!15!fibeamer@white}
+        fg=uwbeamer@brown,
+        bg=uwbeamer@gray!15!uwbeamer@white}
       \usebeamercolor*{normal text}
       % Code listings
       \lstset{%
-        commentstyle=\color{green!30!fibeamer@white},
-        keywordstyle=\color{blue!30!fibeamer@white},
-        stringstyle=\color{fibeamer@lightRed}}
+        commentstyle=\color{green!30!uwbeamer@white},
+        keywordstyle=\color{blue!30!uwbeamer@white},
+        stringstyle=\color{uwbeamer@brown!30!uwbeamer@white}}
       }{%
     \endgroup}
   %% Structures
-  \setbeamercolor{frametitle}{fg=fibeamer@red}
-  \setbeamercolor{framesubtitle}{fg=fibeamer@black!75!fibeamer@white}
+  \setbeamercolor{frametitle}{fg=uwbeamer@brown}
+  \setbeamercolor{framesubtitle}{fg=uwbeamer@black!75!uwbeamer@white}
   %% Text
-  \setbeamercolor{normal text}{fg=fibeamer@black, bg=fibeamer@white}
-  \setbeamercolor{structure}{fg=fibeamer@black, bg=fibeamer@white}
-  \setbeamercolor{alerted text}{fg=orange}
+  \setbeamercolor{normal text}{fg=uwbeamer@black, bg=uwbeamer@white}
+  \setbeamercolor{structure}{fg=uwbeamer@black, bg=uwbeamer@white}
+  \setbeamercolor{alerted text}{fg=red}
   \addtobeamertemplate{block begin}{%
-    \iffibeamer@dark % alerted text in plain block at dark slides
-      \setbeamercolor{alerted text}{fg=fibeamer@orange}%
+    \ifuwbeamer@dark % alerted text in plain block at dark slides
+      \setbeamercolor{alerted text}{fg=uwbeamer@orange}%
     \fi}{}
   %% Items, footnotes and links
-  \setbeamercolor*{item}{fg=fibeamer@red}
-  \setbeamercolor*{footnote mark}{fg=fibeamer@red}
-  \hypersetup{urlcolor=fibeamer@red}
+  \setbeamercolor{item}{fg=uwbeamer@brown}
+  \setbeamercolor{footnote mark}{fg=uwbeamer@brown}
+  \hypersetup{urlcolor=uwbeamer@brown}
   %% Blocks
   \setbeamercolor{block title}{%
-    fg=fibeamer@white, bg=fibeamer@red}
+    fg=uwbeamer@white, bg=uwbeamer@brown}
   \setbeamercolor{block title example}{%
-    fg=fibeamer@white, bg=fibeamer@red}
+    fg=uwbeamer@white, bg=uwbeamer@brown}
   \setbeamercolor{block title alerted}{%
-    fg=fibeamer@white, bg=orange}
+    fg=uwbeamer@white, bg=red}
   \setbeamercolor{block body}{%
-    fg=fibeamer@red!90!fibeamer@black,
-    bg=fibeamer@gray!20!fibeamer@white}
+    fg=uwbeamer@brown, bg=uwbeamer@gray!20!uwbeamer@white}
   %% Title
-  \setbeamercolor{title}{fg=fibeamer@white, bg=fibeamer@red}
+  \setbeamercolor{title}{fg=uwbeamer@white, bg=uwbeamer@brown}
   % Code listings
   \lstset{%
     basicstyle=\footnotesize\ttfamily,
     breakatwhitespace=false,
     breaklines=true,
-    commentstyle=\color{green!60!fibeamer@black},
+    commentstyle=\color{green!60!uwbeamer@black},
     extendedchars=true,
     keywordstyle=\color{blue},
     showspaces=false,
@@ -142,4 +141,4 @@
 <all>
 \endinput
 %%
-%% End of file `beamercolorthemefibeamer-mu-med.sty'.
+%% End of file `beamercolorthemeuwbeamer-uw-aae.sty'.

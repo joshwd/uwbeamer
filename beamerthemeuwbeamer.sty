@@ -54,7 +54,7 @@
 {\def\uwbeamer@versiondef#1#2{
   \gdef\uwbeamer@version@number{#1}
   \gdef\uwbeamer@version@date{#2}
-  \gdef\uwbeamer@version{#2 #1 uwbeamer MU beamer theme}}
+  \gdef\uwbeamer@version{#2 #1 uwbeamer UW beamer theme}}
 \uwbeamer@versiondef{v1.1.6-dev}{2016/09/27}}
 \hypersetup{%
   pdfcreator=\uwbeamer@version,
@@ -71,9 +71,9 @@
 \ExecuteOptionsBeamer{microtype}
 \DeclareOptionBeamer{nomicrotype}{\uwbeamer@microtypefalse}
 \DeclareOptionBeamer{university}{\def\uwbeamer@university{#1}}
-\ExecuteOptionsBeamer{university=mu}
+\ExecuteOptionsBeamer{university=uw}
 \DeclareOptionBeamer{faculty}{\def\uwbeamer@faculty{#1}}
-\ExecuteOptionsBeamer{faculty=fi}
+\ExecuteOptionsBeamer{faculty=aae}
 \def\uwbeamer@locale{%
   % Babel / polyglossia detection
   \ifx\languagename\undefined%
@@ -139,11 +139,11 @@
 \DeclareOptionBeamer{logo}{\def\uwbeamer@logo{#1}}
 \ExecuteOptionsBeamer{%
   logo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
-    \uwbeamer@faculty-\uwbeamer@logoLocale}
+    \uwbeamer@faculty}
 \DeclareOptionBeamer{fallbackLogo}{\def\uwbeamer@fallbackLogo{#1}}
 \ExecuteOptionsBeamer{%
   fallbackLogo=\uwbeamer@logoPath uwbeamer-\uwbeamer@university-%
-    \uwbeamer@faculty-english}
+    \uwbeamer@faculty}
 \def\uwbeamer@require#1{\IfFileExists{#1.sty}{%
   \@ifpackageloaded{#1}{}{\RequirePackage{#1}}}{}}
 \def\uwbeamer@requireTheme#1{%

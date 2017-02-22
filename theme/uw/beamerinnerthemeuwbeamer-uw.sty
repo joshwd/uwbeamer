@@ -1,10 +1,10 @@
 %%
-%% This is file `beamerfontthemeuwbeamer-mu.sty',
+%% This is file `beamerinnerthemeuwbeamer-uw.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% base.dtx  (with options: `font')
+%% base.dtx  (with options: `inner')
 %% 
 %% Copyright 2016  Vít Novotný <witiko@mail.muni.cz>
 %% Faculty of Informatics, Masaryk University (Brno, Czech Republic)
@@ -51,18 +51,39 @@
 %% The names of the source files used are shown above.
 %% 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{uwbeamer/theme/mu/%
-  beamerfontthemeuwbeamer-mu}[2016/01/12]
+\ProvidesPackage{uwbeamer/theme/uw/%
+  beamerinnerthemeuwbeamer-uw}[2016/01/14]
 \mode<presentation>
-  \setbeamerfont{normal text}{size=\normalsize}
-  \setbeamerfont{title}{size=\LARGE, series=\bfseries}
-  \setbeamerfont{subtitle}{parent=normal text, size=\Large}
-  \setbeamerfont{frametitle}{size=\Large}
-  \setbeamerfont{framesubtitle}{size=\large, shape=\itshape}
-  \setbeamerfont{description item}{series=\bfseries}
-  \setbeamerfont{author}{size=\large}
+\defbeamertemplate*{itemize item}{uwbeamer}{$\bullet$}
+\defbeamertemplate*{itemize subitem}{uwbeamer}{\---}
+\defbeamertemplate*{itemize subsubitem}{uwbeamer}{\guillemotright}
+\defbeamertemplate*{bibliography item}{uwbeamer}{\insertbiblabel}
+\AtBeginDocument{%
+  \let\uwbeamer@oldcite\cite
+  \def\cite#1{{%
+    \usebeamercolor[fg]{item}%
+    \uwbeamer@oldcite{#1}}}}
+\defbeamertemplate*{section in toc}{uwbeamer}{%
+  \usebeamercolor[fg]{item}%
+    \inserttocsectionnumber.%
+  \usebeamercolor[fg]{structure}%
+  \kern1.25ex\inserttocsection\par}
+\defbeamertemplate*{subsection in toc}{uwbeamer}{%
+  \hspace\leftmargini
+  \usebeamercolor[fg]{item}%
+    \inserttocsectionnumber.\inserttocsubsectionnumber%
+  \usebeamercolor[fg]{structure}%
+  \kern1.25ex\inserttocsubsection\par}
+\defbeamertemplate*{subsubsection in toc}{uwbeamer}{%
+  \hspace\leftmargini
+  \hspace\leftmarginii
+  \usebeamercolor[fg]{item}%
+    \inserttocsectionnumber.\inserttocsubsectionnumber.%
+    \inserttocsubsubsectionnumber%
+  \usebeamercolor[fg]{structure}%
+  \kern1.25ex\inserttocsubsubsection\par}
 \mode
 <all>
 \endinput
 %%
-%% End of file `beamerfontthemeuwbeamer-mu.sty'.
+%% End of file `beamerinnerthemeuwbeamer-uw.sty'.

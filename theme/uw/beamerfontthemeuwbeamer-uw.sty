@@ -1,10 +1,10 @@
 %%
-%% This is file `beamercolorthemeuwbeamer-mu.sty',
+%% This is file `beamerfontthemeuwbeamer-uw.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% base.dtx  (with options: `color')
+%% base.dtx  (with options: `font')
 %% 
 %% Copyright 2016  Vít Novotný <witiko@mail.muni.cz>
 %% Faculty of Informatics, Masaryk University (Brno, Czech Republic)
@@ -51,41 +51,18 @@
 %% The names of the source files used are shown above.
 %% 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{uwbeamer/theme/mu/%
-  beamercolorthemeuwbeamer-mu}[2016/05/06]
-\newenvironment{darkframes}{}{}
+\ProvidesPackage{uwbeamer/theme/uw/%
+  beamerfontthemeuwbeamer-uw}[2016/01/12]
 \mode<presentation>
-  \RequirePackage{listings}
-  \RequirePackage{ifthen}
-  \RequirePackage{tikz}
-  \newif\ifuwbeamer@dark\uwbeamer@darkfalse
-  \defbeamertemplate*{background canvas}{uwbeamer}{%
-    \ifthenelse{%
-      \boolean{uwbeamer@dark} \OR \c@framenumber=0
-    }{%
-      \begin{tikzpicture}
-        \clip (0,\uwbeamer@lengths@clipbottom) rectangle
-          (\paperwidth,\uwbeamer@lengths@cliptop);
-        \path [inner color = uwbeamer@dark@backgroundInner,
-               outer color = uwbeamer@dark@backgroundOuter]
-          (0,0) rectangle (\paperwidth,\paperwidth);
-      \end{tikzpicture}
-    }{%
-      \begin{tikzpicture}
-        \clip (0,\uwbeamer@lengths@clipbottom) rectangle
-          (\paperwidth,\uwbeamer@lengths@cliptop);
-        \path [inner color = uwbeamer@light@backgroundInner,
-               outer color = uwbeamer@light@backgroundOuter]
-          (0,0) rectangle (\paperwidth,\paperwidth);
-      \end{tikzpicture}
-    }}
-  \setbeamercolor{qed symbol}{%
-    use=block body,
-    fg=block body.fg,
-    bg=block body.bg}
-  \hypersetup{colorlinks,linkcolor=}
+  \setbeamerfont{normal text}{size=\normalsize}
+  \setbeamerfont{title}{size=\LARGE, series=\bfseries}
+  \setbeamerfont{subtitle}{parent=normal text, size=\Large}
+  \setbeamerfont{frametitle}{size=\Large}
+  \setbeamerfont{framesubtitle}{size=\large, shape=\itshape}
+  \setbeamerfont{description item}{series=\bfseries}
+  \setbeamerfont{author}{size=\large}
 \mode
 <all>
 \endinput
 %%
-%% End of file `beamercolorthemeuwbeamer-mu.sty'.
+%% End of file `beamerfontthemeuwbeamer-uw.sty'.

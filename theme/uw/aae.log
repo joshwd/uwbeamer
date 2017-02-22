@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  21 FEB 2017 16:34
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xetex 2016.12.23)  22 FEB 2017 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ped.ins
-(./ped.ins (../../LICENSE.tex
+**aae.ins
+(./aae.ins (../../LICENSE.tex
 (/usr/share/texmf-dist/tex/latex/base/docstrip.tex
 \blockLevel=\count28
 \emptyLines=\count29
@@ -53,19 +53,19 @@ English documentation    <2014/09/29>
 
 ))
 
-Generating file(s) beamercolorthemefibeamer-mu-ped.sty 
-\openout0 = `beamercolorthemefibeamer-mu-ped.sty'.
+Generating file(s) beamercolorthemeuwbeamer-uw-aae.sty 
+\openout0 = `beamercolorthemeuwbeamer-uw-aae.sty'.
 
 
-Processing file ped.dtx -> beamercolorthemefibeamer-mu-ped.sty
-% % % % % . . . . % % % % % % % % % . . . . . . . . . . % % % % . . . . . % %
-% % . . . . . . . . . % % % % % % . % % % % . . . . . . . . . . . . . . . . .
-. . . . . % % % . . . . . . % % % % % % . . . . . % % % % . . . . . . . . . .
-. . . . . % % % % % . . . . . . . . . . . . . . . . %
-Lines  processed: 144
-Comments removed: 51
+Processing file aae.dtx -> beamercolorthemeuwbeamer-uw-aae.sty
+% % % % % . . . . % % % % % % % . . . . . . . . % % % % . . . . . % % % % . .
+. . . . . . . % % % % % % . % % % % . . . . . . . . . . . . . . . . . . . . .
+. % % % . . . . . . % % % % % % . . . . . % % % % . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . %
+Lines  processed: 133
+Comments removed: 44
 Comments  passed: 0
-Codelines passed: 93
+Codelines passed: 89
 
  )
 No pages of output.

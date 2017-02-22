@@ -1,4 +1,4 @@
-EPSFILES=UWcrest-white.eps
+EPSFILES=uw-aae.eps
 .PHONY: all implode
 
 # This target converts all the PDF logos to EPS.
