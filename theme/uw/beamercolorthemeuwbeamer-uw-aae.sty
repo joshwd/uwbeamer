@@ -56,9 +56,9 @@
 \mode<presentation>
   \definecolor{uwbeamer@black}{HTML}{2B2E34}
   \definecolor{uwbeamer@white}{HTML}{FFFFFF}
-  \definecolor{uwbeamer@brown}{HTML}{892840}
-  \colorlet{uwbeamer@lightBrown}{uwbeamer@brown!30!uwbeamer@white}
-  \colorlet{uwbeamer@darkBrown}{uwbeamer@brown!60!uwbeamer@black}
+  \definecolor{uwbeamer@gray}{HTML}{646569}
+  \colorlet{uwbeamer@lightBrown}{uwbeamer@gray!30!uwbeamer@white}
+  \colorlet{uwbeamer@darkBrown}{uwbeamer@gray!60!uwbeamer@black}
   \definecolor{uwbeamer@gray}{HTML}{999999}
   \definecolor{uwbeamer@lightOrange}{HTML}{FFA25E}
   \colorlet{uwbeamer@orange}{uwbeamer@lightOrange!80!uwbeamer@darkBrown}
@@ -71,11 +71,11 @@
     \begingroup
       \uwbeamer@darktrue
       %% Structures
-      \setbeamercolor*{frametitle}{fg=uwbeamer@brown!30!uwbeamer@white}
+      \setbeamercolor*{frametitle}{fg=uwbeamer@gray!30!uwbeamer@white}
       \setbeamercolor*{framesubtitle}{fg=uwbeamer@white}
       %% Text
-      \setbeamercolor*{normal text}{fg=uwbeamer@white, bg=uwbeamer@brown}
-      \setbeamercolor*{structure}{fg=uwbeamer@white, bg=uwbeamer@brown}
+      \setbeamercolor*{normal text}{fg=uwbeamer@white, bg=uwbeamer@gray}
+      \setbeamercolor*{structure}{fg=uwbeamer@white, bg=uwbeamer@gray}
       \setbeamercolor*{alerted text}{fg=uwbeamer@lightOrange}
       %% Items, footnotes and links
       \setbeamercolor*{item}{fg=uwbeamer@lightBrown}
@@ -83,24 +83,24 @@
       \hypersetup{urlcolor=uwbeamer@lightBrown}
       %% Blocks
       \setbeamercolor*{block title}{%
-        fg=uwbeamer@white, bg=uwbeamer@brown!60!uwbeamer@white}
+        fg=uwbeamer@white, bg=uwbeamer@gray!60!uwbeamer@white}
       \setbeamercolor*{block title example}{%
-        fg=uwbeamer@white, bg=uwbeamer@brown!60!uwbeamer@white}
+        fg=uwbeamer@white, bg=uwbeamer@gray!60!uwbeamer@white}
       \setbeamercolor*{block title alerted}{%
         fg=uwbeamer@darkBrown, bg=uwbeamer@lightOrange}
       \setbeamercolor*{block body}{%
-        fg=uwbeamer@brown,
+        fg=uwbeamer@gray,
         bg=uwbeamer@gray!15!uwbeamer@white}
       \usebeamercolor*{normal text}
       % Code listings
       \lstset{%
         commentstyle=\color{green!30!uwbeamer@white},
         keywordstyle=\color{blue!30!uwbeamer@white},
-        stringstyle=\color{uwbeamer@brown!30!uwbeamer@white}}
+        stringstyle=\color{uwbeamer@gray!30!uwbeamer@white}}
       }{%
     \endgroup}
   %% Structures
-  \setbeamercolor{frametitle}{fg=uwbeamer@brown}
+  \setbeamercolor{frametitle}{fg=uwbeamer@gray}
   \setbeamercolor{framesubtitle}{fg=uwbeamer@black!75!uwbeamer@white}
   %% Text
   \setbeamercolor{normal text}{fg=uwbeamer@black, bg=uwbeamer@white}
@@ -111,20 +111,20 @@
       \setbeamercolor{alerted text}{fg=uwbeamer@orange}%
     \fi}{}
   %% Items, footnotes and links
-  \setbeamercolor{item}{fg=uwbeamer@brown}
-  \setbeamercolor{footnote mark}{fg=uwbeamer@brown}
-  \hypersetup{urlcolor=uwbeamer@brown}
+  \setbeamercolor{item}{fg=uwbeamer@gray}
+  \setbeamercolor{footnote mark}{fg=uwbeamer@gray}
+  \hypersetup{urlcolor=uwbeamer@gray}
   %% Blocks
   \setbeamercolor{block title}{%
-    fg=uwbeamer@white, bg=uwbeamer@brown}
+    fg=uwbeamer@white, bg=uwbeamer@gray}
   \setbeamercolor{block title example}{%
-    fg=uwbeamer@white, bg=uwbeamer@brown}
+    fg=uwbeamer@white, bg=uwbeamer@gray}
   \setbeamercolor{block title alerted}{%
     fg=uwbeamer@white, bg=red}
   \setbeamercolor{block body}{%
-    fg=uwbeamer@brown, bg=uwbeamer@gray!20!uwbeamer@white}
+    fg=uwbeamer@gray, bg=uwbeamer@gray!20!uwbeamer@white}
   %% Title
-  \setbeamercolor{title}{fg=uwbeamer@white, bg=uwbeamer@brown}
+  \setbeamercolor{title}{fg=uwbeamer@white, bg=uwbeamer@gray}
   % Code listings
   \lstset{%
     basicstyle=\footnotesize\ttfamily,
