@@ -97,7 +97,10 @@
     3\uwbeamer@lengths@baseunit}
   \newlength\uwbeamer@lengths@logoheight
   \setlength\uwbeamer@lengths@logoheight{%
-    1.6\uwbeamer@lengths@logowidth}
+    1.571321\uwbeamer@lengths@logowidth}
+    \newlength\uwbeamer@lengths@logopad
+    \setlength\uwbeamer@lengths@logopad{%
+    0.25\uwbeamer@lengths@logoheight}
   \defbeamertemplate*{navigation symbols}{uwbeamer}{}
   \defbeamertemplate*{headline}{uwbeamer}{}
   \defbeamertemplate*{frametitle}{uwbeamer}{%
@@ -132,7 +135,7 @@
       remember picture,
       overlay,
       xshift=0.5\uwbeamer@lengths@logowidth,
-      yshift=0.5\uwbeamer@lengths@logoheight
+      yshift=\uwbeamer@lengths@logopad
     ]
       \node at (0,0) {
         \uwbeamer@includeLogo[
@@ -149,9 +152,11 @@
     \end{minipage}
     \vskip-.5\baselineskip
 
+    \definecolor{uwbeamer@dottedline}{HTML}{dadfe1}
     % Input the dashed line
     \begin{pgfpicture}
       \pgfsetlinewidth{2pt}
+      \pgfsetcolor{uwbeamer@dottedline}
       \pgfsetroundcap
       \pgfsetdash{{0pt}{4pt}}{0cm}
 
