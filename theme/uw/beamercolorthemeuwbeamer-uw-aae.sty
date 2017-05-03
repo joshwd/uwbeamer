@@ -64,11 +64,11 @@
   \definecolor{uwbeamer@darkGray}{HTML}{282728}
   \definecolor{uwbeamer@link}{HTML}{0479a8}
   \definecolor{uwbeamer@gray}{HTML}{999999}
-  \definecolor{uwbeamer@lightOrange}{HTML}{FFA25E}
-  \colorlet{uwbeamer@orange}{uwbeamer@lightOrange!80!uwbeamer@darkBrown}
+  %\definecolor{uwbeamer@lightOrange}{HTML}{FFA25E}
+  %\colorlet{uwbeamer@orange}{uwbeamer@lightOrange!80!uwbeamer@darkBrown}
   %% Background gradients
-  \colorlet{uwbeamer@dark@backgroundInner}{uwbeamer@darkBrown}
-  \colorlet{uwbeamer@dark@backgroundOuter}{uwbeamer@darkBrown}
+  \colorlet{uwbeamer@dark@backgroundInner}{uwbeamer@darkGray}
+  \colorlet{uwbeamer@dark@backgroundOuter}{uwbeamer@darkGray}
   \colorlet{uwbeamer@light@backgroundInner}{uwbeamer@white}
   \colorlet{uwbeamer@light@backgroundOuter}{uwbeamer@white}
   \renewenvironment{darkframes}{%
@@ -91,9 +91,9 @@
       \setbeamercolor*{block title example}{%
         fg=uwbeamer@white, bg=uwbeamer@gray!60!uwbeamer@white}
       \setbeamercolor*{block title alerted}{%
-        fg=uwbeamer@darkBrown, bg=uwbeamer@lightOrange}
+        fg=uwbeamer@white, bg=uwbeamer@gray!60!uwbeamer@white}
       \setbeamercolor*{block body}{%
-        fg=uwbeamer@gray,
+        fg=uwbeamer@darkGray,
         bg=uwbeamer@gray!15!uwbeamer@white}
       \usebeamercolor*{normal text}
       % Code listings
@@ -112,12 +112,12 @@
   \setbeamercolor{alerted text}{fg=red}
   \addtobeamertemplate{block begin}{%
     \ifuwbeamer@dark % alerted text in plain block at dark slides
-      \setbeamercolor{alerted text}{fg=uwbeamer@orange}%
+      \setbeamercolor{alerted text}{fg=uwbeamer@redtext}%
     \fi}{}
   %% Items, footnotes and links
-  \setbeamercolor{item}{fg=uwbeamer@gray}
-  \setbeamercolor{footnote mark}{fg=uwbeamer@gray}
-  \hypersetup{urlcolor=uwbeamer@gray}
+  \setbeamercolor{item}{fg=uwbeamer@link}
+  \setbeamercolor{footnote mark}{fg=uwbeamer@link}
+  \hypersetup{urlcolor=uwbeamer@link}
   %% Blocks
   \setbeamercolor{block title}{%
     fg=uwbeamer@white, bg=uwbeamer@gray}
@@ -126,7 +126,7 @@
   \setbeamercolor{block title alerted}{%
     fg=uwbeamer@white, bg=red}
   \setbeamercolor{block body}{%
-    fg=uwbeamer@gray, bg=uwbeamer@gray!20!uwbeamer@white}
+    fg=uwbeamer@darkGray, bg=uwbeamer@gray!20!uwbeamer@white}
   %% Title
   \setbeamercolor{title}{fg=uwbeamer@white, bg=uwbeamer@gray}
   \setbeamercolor{author}{fg=uwbeamer@grayblue, bg=uwbeamer@gray}
